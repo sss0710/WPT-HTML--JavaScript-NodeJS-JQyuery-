@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title>WEEKDAY</title>
+<script>
+	function getWeekDay(date) 
+	{
+		var day = date.getDay();
+		var w_day;
+		switch(day)
+		{
+			case 1: w_day = 'MO';  
+                          break;  
+			case 2: w_day = 'TU';  
+                         break;  
+			case 3: w_day = 'WE';  
+                          break;  
+			case 4: w_day = 'TH';  
+                          break;  
+			case 5: w_day = 'FR';  
+                          break;  
+			case 6: w_day = 'SA';  
+                          break;
+			case 7: w_day = 'SU';  
+                          break;
+		}
+		
+		return w_day;
+}
+</script>
+</head>
+<body>
+	<script>
+		let date = new Date(2021, 10, 10); 
+		document.write(getWeekDay(date));
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>University Reg Details</title>
+<style>
+body
+{
+	align:center;
+	background-color:skyblue;
+}
+fieldset
+{
+	width:40%;
+	font-style:bold;
+}
+th
+{
+	text-align:right;
+}
+</style>
+</head>
+<body>
+<fieldset>
+<legend>Registration Details</legend>
+<table width="100%">
+<tr><th>University: </th><td><input type="text" name="university"></td></tr>
+<tr><th>Institute: </th><td><input type="text" name="institute"></td></tr>
+<tr><th>Branch:</th><td>
+<select name="branch" >
+	<option value="Kalyan">Kalyan</option>
+	<option value="kalina">Kalina</option>
+	<option value="thane">Thane</option>
+	<option value="andheri">Andheri</option>
+</select></td></tr>
+<tr><th>Degree:</th><td>
+<select name="degree">
+	<option value="arts">B.A.</option>
+	<option value="commerce">B.Comm.</option>
+	<option value="science">B.Sc.</option>
+	<option value="engg">B.E./B.Tech.</option>
+</select>
+<input type="radio" name="pursuing">Pursuing
+<input type="radio" name="completed">Completed
+</td></tr>
+<tr><th>Average CPI: </th><td> 
+<input type="number" min="0.0" max="10.0" step="0.1" size="3%" value="0"> Upto <input type="number" min="1" max="8" step="1" size="2%" value="8"> Th Semester</td></tr>
+<tr><th>Experience:</th><td> <input type="number" min="0" max="25" step="0.5"></td></tr>
+
+<tr><th>Your Website Or Blog: </th><td><input type="text" name="website" value="http://"></td></tr>
+</table>
+</fieldset>
+</body>
+</html>

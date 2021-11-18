@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<ol class="list">
+		<script>
+			$(document).ready(function f1()
+										{
+											var name = ["Parshu", "Mrunal", "Mayur", "Kaushal", "Chandra"];
+											var n = "";
+											for( var i = 0; i , name.length; i++)
+												n += $("div.list").append("<li>name[i]</li>");
+												
+											$(ol.list).innerHTML = n;
+										});
+		</script></ol>
+	</body>
+</html>

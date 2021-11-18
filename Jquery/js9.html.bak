@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<ui class="jq"> 
+				<li>Apple</li> 
+				<li>Kiwi</li> 
+				<li>Strawberry</li>
+			</ui>
+		</div>
+		<script>
+			var listItems = $( 'li' );
+			var rawListItem = listItems[1];
+			console.log(rawListItem.innerHTML);
+		</script>
+	</body>
+</html>

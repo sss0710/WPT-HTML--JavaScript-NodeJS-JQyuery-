@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<body> 
+			<div id="div1" class="divclass">This is div 1</div> 
+			<div id="div2"> This is div 2</div> 
+			<div id="div3">This is div 3</div> 
+		<script>
+			$(document).ready(function f1()
+										{
+											var abc = $("div").attr("class");
+											//abc.prepend("Output would be ");
+											var d = "$( 'div." + abc + "' ).attr("id")";
+											
+											console.log("Output would be " + $d);
+										});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery 14</title>
+    <script src="./Script/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <form>
+        <p>
+            <label>Name: </label>
+            <input type="text" id="name" required>
+            <span id="s1"></span>
+        </p>
+        <p>
+            <label>Age: &nbsp;&nbsp;</label>
+            <input type="number" id="age" min="10" max="100" required>
+        </p>
+        <p>
+		<table>
+			<tr><td rowspan="2">
+            <label>Employed?</label></td>
+            <td><input type="radio" name="emp" value="true" required>Yes</td></tr>
+            <tr><td><input type="radio" name="emp" value="false">No</td></tr></table>
+        </p>
+        <p>
+		<table>
+			<tr><td>
+            <input type="button" value="Add" id="add_btn"></td><td>
+            <input type="button" value="Display" id="display_btn"></td></tr></table>
+        </p>
+    </form>
+
+    <table id="t1" style="border: 1px solid black;">
+    </table>
+
+    <script>
+        function validateName() {
+            var name = $("#name").val().trim();
+            if (name == "" || name.match(/[^a-zA-Z ]+/) || name.length > 10) {
+                $("#s1").text("Please enter alphabetical value less than 10 characters");
+                return false;
+            }
+            else {
+                $("#s1").text("");
+                return true;
+            }
+        }
+
+        var arr = [];
+		
+        $("#add_btn").on("click", function() {
+			
+            if (validateName()) {
+
+                var name = $("#name").val();
+                var age = $("#age").val();
+                var radio_btns = $('[name="emp"]')
+                for (element of radio_btns) {
+                    if (element.checked) var isEmployed = $(element).val();
+                }
+                var obj = {
+                    "name": name,
+                    "age": age,
+                    "isEmployed": isEmployed
+                }
+                arr.push(obj);
+            }
+        })
+		
+		
+        $("#display_btn").on("click", function () {
+            var row = "<tr><th>Name</th><th>Age</th><th>isEmployed</th></tr>";
+            arr.forEach(function (obj) {
+                row += "<tr>"
+                for (property in obj) {
+                    row += ("<td>" + obj[property] + "</td>")
+                }
+                row += "</tr>"
+            })
+            $("#t1").html(row);
+        })
+    </script>
+</body>
+
+</html>

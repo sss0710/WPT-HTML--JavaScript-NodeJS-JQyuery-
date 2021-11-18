@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 23</title>
+    <script>
+    function cal(){
+    var radius=parseInt(document.getElementById("rad").value);
+    var area=(Math.PI*radius*radius);
+    var Ci=(2*Math.PI*radius);
+    document.getElementById("ar").innerHTML=("The area of cicrcle is:"+area);
+    document.getElementById("circum").innerHTML=("The Circumference of cicrcle is:"+Ci);
+    }
+    </script>
+</head>
+
+<body>
+
+<form>
+<p>To calculate Area and perimeter of circle</p>
+<p></p>Enter the radius of Circle:</p>
+ <input type="text" id="rad"><br>
+ <input type="button" value="Display" onclick="cal()">
+</form>
+ <p id="ar"></p> 
+ <p id="circum"></p>  
+</body>
+</html>

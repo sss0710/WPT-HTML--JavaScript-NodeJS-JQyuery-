@@ -1,0 +1,21 @@
+<html>
+	<head>
+	
+	<script src="./script/jquery-3.6.0.js">
+	</script>
+	</head>
+	<body><center>
+		<div class=”target” style="background-color: skyblue;border: 20px;width: 200px;height: 20px;valign: center"></div><br>
+		<div class=”target” style="background-color: skyblue;border: 20px;width: 200px;height: 20px;valign: center"></div><br>
+		<div class=”target” style="background-color: skyblue;border: 20px;width: 200px;height: 20px;valign: center"></div><br>
+		<button>Click</button> 
+		
+		<script>
+			$("button").on("click", function()
+									{
+										$("div:nth-child(2)").text("I got changed").css("background-color","yellow");
+									}
+							);
+		</script>
+	</body>
+</html>	

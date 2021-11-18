@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<body>
+		<script>
+		    var today = new Date();
+			document.write(today + "<br><br><br>");
+			
+			var n = today.getMonth();
+			var month;
+			
+			switch(n+1) 
+			{
+				case 1: month = 'January';  
+                          break;  
+				case 2: month = 'February';  
+                          break;  
+				case 3: month = 'March';  
+                          break;  
+				case 4: month = 'April';  
+                          break;  
+				case 5: month = 'May';  
+                          break;  
+				case 6: month = 'June';  
+                          break;
+				case 7: month = 'July';  
+                          break;  
+				case 8: month = 'August';  
+                          break;  
+				case 9: month = 'September';  
+                          break;
+				case 10: month = 'October';  
+                          break;  
+				case 11: month = 'November';  
+                          break;  
+				case 12: month = 'December';  
+                          break;
+            }
+			
+			var n1 = today.getDay();
+			var w_day;
+			switch(n1)
+			{
+				case 1: w_day = 'MONDAY';  
+                          break;  
+				case 2: w_day = 'Tuesday';  
+                          break;  
+				case 3: w_day = 'Wednesday';  
+                          break;  
+				case 4: w_day = 'Thrusday';  
+                          break;  
+				case 5: w_day = 'Friday';  
+                          break;  
+				case 6: w_day = 'Saturday';  
+                          break;
+				case 7: w_day = 'Sunday';  
+                          break;
+			}
+			
+			var greet = today.getHours();
+			var g;
+			
+			if(greet < 12 && greet > 2)
+				g='Good Morning';
+			if(greet >= 12 && greet <=16)
+				g='Good Afternoon';
+			if(greet > 16 && greet <= 20)
+				g='Good Evening';
+			if((greet > 20 && greet <=24) || greet <=2)
+				g='Good Night';
+			
+			var date1 = today.getDate();
+			var date2 = new Date("12/31/2021");
+			var diffDays = parseInt((date2.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)); 
+			
+			document.write("Today is " + w_day + ", "); 
+			document.write(today.getDate() + " " + month + " ");
+			document.write(today.getFullYear());
+			document.write(", Welcome, and " + g + " to you.<br>");
+			document.write("Number of days left till end of year: " + diffDays);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+        <script>
+            $(document).ready(function(){
+                var arr=["John","Steve","Ben","Demon","Ian"];
+				var idx = 0;
+                for( var i = 1; i < 6; i++)
+                    $("#list").append(i+"."+arr[i-1]+"<br>");
+                })
+        </script>
+        <h3>Members of my Group are</h3>
+        <ol id="list"></ol>
+	</body>
+</html>

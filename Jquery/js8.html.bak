@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<ui> 
+				<li>Apple</li> 
+				<li>Kiwi</li> 
+				<li>Strawberry</li>
+			</ui>
+		</div>
+		<script>
+			//$("h1").append("<div><h1>JQuery Core</h1></div> ");
+		</script>
+	</body>

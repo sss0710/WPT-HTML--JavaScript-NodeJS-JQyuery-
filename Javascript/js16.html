@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>BingoSearch</title>
+		<script>
+			function arr()
+			{
+				var ar = [12,45,32,3,27];
+				var num = parseInt(document.getElementById("num").value);
+				
+				for(var i = 0; i < ar.length; i++)
+				{
+					if(num == ar[i])
+					{
+						document.getElementById("bingo").value = "Bingo!";
+						break;
+					}
+					else
+						document.getElementById("bingo").value = "No such element!";
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			Enter a number: &nbsp;&nbsp;&nbsp;&nbsp;<input name="num" id="num" value="">
+			<br><br>
+			<input id="bingo" value="" readonly>
+			<br><br>
+			<input type="button" value="search" onclick="arr()">
+		</form>
+ 	</body>
+</html>

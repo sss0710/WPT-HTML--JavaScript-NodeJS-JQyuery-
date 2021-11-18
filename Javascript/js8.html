@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function pow(x,y)
+{
+	var mul = 1;
+	if(y==0)
+	return 1;
+	else
+	{
+		for(var i = 1; i <= y ; i++)
+		{
+			mul*=x;
+		}
+		return mul;
+	}
+}
+		
+</script></head>
+<body>
+<script>
+var x = prompt("Enter the base");
+var x = parseInt(x);
+
+var y = prompt("Enter the power");
+var y = parseInt(y);
+
+document.write("The power is: " + pow(x,y));
+</script>
+</body>
+</html>

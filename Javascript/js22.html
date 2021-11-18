@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Regex</title>
+		<script>
+			function arr()
+			{
+				var ar = ["www.google.com", "www.msn.com", "www.amazon.co.in", "in.answers.yahoo.com", "en.m.wikipedia.com", "codehs.gitbooks.io", "www.coderanch.com"]
+				var i;
+				let count = 0;
+				const hasRegex = /^www/;
+				document.write("Websites having www are: <br>");
+				for(i = 0; i < ar.length; i++)
+					if(hasRegex.test(ar[i]))
+					{
+						document.write(ar[i] + "<br>");
+						++count;
+					}
+				document.write("The number of such websites are: "  + count);
+			}
+		</script>
+	</head>
+	
+	<body>
+		<script>
+			arr();
+		</script>
+	</body>
+</html>

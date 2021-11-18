@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<title>Fibonacci</title>
+<script>
+	function fibo(n)
+	{
+		var sum = 0;
+		var i = 0;
+		var j = 0;
+		var k = 1;
+		document.write("The fibonacci series is: ");
+		while(i<n)
+		{
+			document.writeln(sum);
+			sum = j+k;
+			k = j;
+			j = sum;
+			i++;
+		}
+	}
+</script>
+</head>
+<body>
+<script>
+	var n = prompt("Enter a number");
+	var num = parseInt(n);
+	fibo(num);
+	</script>
+</body>
+</html>

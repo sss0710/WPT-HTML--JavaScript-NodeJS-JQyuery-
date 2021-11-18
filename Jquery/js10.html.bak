@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<ol class="jq"> 
+				<li>Apple</li> 
+				<li>Kiwi</li> 
+				<li>Strawberry</li>
+			</ol>
+		</div>
+		<script>
+		
+			
+			$(document).ready(function()
+										{
+											var index = 0;
+											$("li").each(funtion(index)
+											{
+												console.log(($(this).text()).prepend(index.append(":")));
+											});
+										}
+							);/*
+			var a = $("li:nth-child(1)").text();
+			console.log("0:"+ a);
+			a = $("li:nth-child(2)").text();
+			console.log("1:"+ a);
+			a = $("li:nth-child(3)").text();
+			console.log("2:"+ a);*/
+			
+		</script>
+	</body>
+</html>

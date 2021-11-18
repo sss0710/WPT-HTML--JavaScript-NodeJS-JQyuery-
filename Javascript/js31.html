@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Personal Details</title>
+		<style>
+			#id:
+		</style>
+		
+		<script>
+        var mon = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (var i = 0; i < mon.length; i++) {
+            document.getElementById("mon").innerHTML += "<option value = '" + mon[i].substr(0, 3) + "'>" + mon[i] + "</option>";
+        }
+        for (var i = 1; i <= 31; i++) {
+            document.getElementById("date").innerHTML += "<option value = '" + i + "'> " + i + "</option>";
+        }
+        for (var i = 1950; i <= (new Date().getFullYear()); i++) {
+            document.getElementById("year").innerHTML += "<option value = '" + i + "'> " + i + "</option>"
+        }
+    </script>
+		
+		<script>
+			function print()
+			{
+				var pname= document.getElementById("name").value;
+				const hasRegex = /[A-Z][a-z]/;
+				if(!hasRegex.test(pname))
+					document.getElementById("Name should contain only letters");
+		
+			}
+		</script>
+</head>
+<body>
+    <fieldset style="width: fit-content, border-style:solid">
+        <form>
+        <div>
+        Name: &nbsp;&nbsp;<input name="name" id="name"  required>&nbsp;&nbsp;&nbsp;&nbsp;<span id="letters"></span>
+		
+		<br><br>
+		
+		<label for="calendar">Birthdate:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="mon" id="mon" value=">Month</select>
+			<select name="date" id="date">Day</select>
+			<select name="year" id="year">Year</select>
+			
+			<br><br>
+		Email Address: &nbsp;&nbsp;<input name="mail_ad" id="mail_ad"  required> 
+		
+		<br><br>
+		
+		Gender : <input type="radio" id="male" name="male" value="male">
+					<label for="male">Male</label>
+				<input type="radio" id="female" name="female" value="female">
+					<label for="female">Female</label><br><br>
+			
+        Lucky Number: &nbsp;&nbsp;<input name="lucky" id="lucky"  required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A number between 0 to 100)
+		
+		<br><br> 
+		<table>
+		<tr>
+			<td rowspan="3">Favourite Food:</td><td>
+			<input type="checkbox" id="pizza" name="pizza" value="pizza">
+			<label for="pizza">Pizza</label>
+			</td>
+		</tr>
+			
+		<tr>
+			<td><input type="checkbox" id="pasta" name="pasta" value="pasta">
+			<label for="pasta">Pasta</label>
+			</td>
+		</tr>
+			
+		<tr>
+			<td><input type="checkbox" id="chinese" name="chinese" value="chinese">
+			<label for="chinese">Chinese</label>
+			</td>
+		</tr>
+		</table>
+			
+		<br>
+
+        <input type="button" value="Send Data" onclick="print()">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Reset">
+        </form>
+        </div>
+    </fieldset>
+</body>
+</html>

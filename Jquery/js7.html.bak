@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script src="./script/jquery-3.6.0.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<select id="myselect">
+			<option value="1">Option-1</option>
+			<option value="2">Option-2</option>
+			<option value="3">Option-3</option>
+		<script>
+			var txt = $("#myselect option:selected").text();
+			alert(txt);
+		</script>
+	</body>
+</html>

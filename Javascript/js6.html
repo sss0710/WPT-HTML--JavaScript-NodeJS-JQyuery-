@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>Minimum</title>
+<script>
+	function min()
+	{		
+		var min = arguments[0];
+		
+		for(var i = 0; i < arguments.length; i++)
+		{
+			if(min > arguments[i])
+				min = arguments[i];
+		}
+		document.write("The minimum element is: " + min);
+	}
+		
+</script>
+</head>
+<body>
+	<script>
+		min(6,8,6,4,5,22,8,7,9,10);
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Square_Even</title>
+	
+		<script>
+			function fun()
+			{
+				var n = document.getElementById("num").value;
+				var number = parseInt(n);
+				var a =[];
+				var sq = [];
+				var j = 0;
+				for(var i = 1; i <= number; i++)
+				{
+					if(i%2==0)
+					{
+						a[j] = i;
+						sq[j] = a[j]*a[j]+"<br>";
+					}
+					j++;
+				}
+				for(var k = 0; k < sq.length; k++)
+					document.getElementById("e_sq").innerHTML = (sq[k]);
+			}
+			function rt()
+			{
+				document.getElementById("num").value = "";
+			}
+		</script>
+	</head>
+<body>
+	Enter a number:<br>
+		<input name="num" id="num">
+		<br><br>
+		
+	<button type="submit" onclick="fun()">Calculate</button>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="reset" onclick="rt()">Reset</button>
+	<br><br>
+	
+	The square of even numbers are:
+	<br>
+	<p id="e_sq"></p>
+	
+</body>
+</html>

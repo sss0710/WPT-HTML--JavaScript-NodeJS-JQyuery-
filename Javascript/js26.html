@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sum of Digits</title>
+	
+		<script>
+			
+			function number_validate()
+			{
+				var n = document.getElementById("no").value;
+				var num = parseInt(n);
+				var sum = 0;
+				if(num > 1000 || num < 0)
+				{
+					document.getElementById("err").innerHTML = "(Entered number is out of range.)";
+					document.getElementById("no").focus();
+					document.getElementById("no").select();
+					
+					document.getElementById("val").value = " ";
+				}
+				else
+				{
+					while(num > 0){
+					var d = num%10;
+					sum+=d;
+					num=parseInt(num/10);
+					}
+					
+					document.getElementById("val").value = sum;
+				}
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<fieldset style="width:40%">
+			<label></label>
+		<form action="javascript:void(0)">
+			Enter a number: &nbsp;&nbsp;&nbsp;
+			<input name="no" id="no" required>&nbsp;&nbsp;
+			<span id="err"></span>
+			<br><br>
+			
+			Sum of digits of the number: &nbsp;&nbsp;&nbsp;
+			<input name="val" id="val" readonly>
+			<br><br>
+			<button type="submit" onclick="number_validate()">Add</button>
+		</form>
+		</fieldset>
+	</body>
+</html>

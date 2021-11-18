@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>Square & Even</title>
+<script>
+	function even_square(n)
+	{
+		var sum = 0;
+		var i = 0;
+		while(i<=n)
+		{
+			if(i%2==0)
+				sum += (i*i);
+			i++;
+		}
+		return sum;
+	}
+</script>
+</head>
+<body>
+<script>
+	var n = prompt("Enter a number");
+	var num = parseInt(n);
+	document.write("The sum of square of even numbers upto " + num + " is: " + even_square(num));
+	</script>
+</body>
+</html>

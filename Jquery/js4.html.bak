@@ -1,0 +1,25 @@
+<html>
+	<head>
+	
+	<script src="./script/jquery-3.6.0.js">
+	</script>
+	</head>
+	<body><center> 
+		<div id=”target” style="background-color: skyblue;border: 20px;width: 200px;height: 100px;valign: center"> 
+			<span style="background-color: yellow;border: 1px;width: 50px;height: 30px;">Change me!</span> 
+		</div><br>
+		<div id=”div2” style="background-color: skyblue;border: 20px;width: 200px;height: 100px;valign: center"> 
+			<span style="background-color: yellow;border: 1px;width: 50px;height: 30px;">Change me!</span> 
+		</div><br>
+		<button>Click</button> 
+		
+		<script>
+			$("button").on("click", function()
+									{
+										$("div#target" "span").text("I got changed").css("background-color","cyan");
+									}
+							);
+		</script>
+		
+	</body>
+</html>	

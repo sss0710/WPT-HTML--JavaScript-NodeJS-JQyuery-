@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>question21</title>
+    <script>
+        var n = prompt("Enter the number upto which squares are required: ");
+        var i = 0;
+        var arr=[];
+        var arr2= [];
+        while (i<=parseInt(n)){ 
+            arr.push(i);
+            i++;
+        }
+        for(i in arr)
+        {
+			if(i%2==0){
+            arr2[i]= arr[i]*arr[i];
+            document.write("Number: " + arr[i] + " :" + " square: "+ arr2[i] + "<br>");
+			}
+		}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

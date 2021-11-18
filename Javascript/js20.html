@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Sum_Avg</title>
+		<script>
+			function fun()
+			{
+				var str = document.getElementById("num").value;
+				
+				var numb = [0,0,0,0,0];
+				var fsum = 0;
+				var favg = 0.0;
+				for(var i = 0; i < numb.length; i++)
+				{
+					var splitString = str.split(" ");
+					numb[i] = parseInt(splitString[i]);
+				}
+				for(var i = 0; i < numb.length; i++)
+					fsum += numb[i];
+				favg = fsum/numb.length;
+				document.getElementById("sum").value = fsum;
+				document.getElementById("avg").value = favg;
+			}
+			
+			function rt()
+			{
+				document.getElementById("num").value = "";
+				document.getElementById("sum").value = "0";
+				document.getElementById("avg").value = "0";
+			}
+		</script>
+	</head>
+	
+	<body>
+		Enter 5 nos separated by Comma(,):<br>
+		<input name="num" id="num">
+		<br><br>
+		
+		The sum of the numbers is:<br>
+		<input name="sum" id="sum" value="0" readonly>
+		<br><br>
+		
+		The avg of the numbers is: <br>
+		<input name="avg" id="avg" value="0" readonly>
+		<br><br>
+		<button type="submit" onclick="fun()">Calculate</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="reset" onclick="rt()">Reset</button>
+	</body>
+</html>

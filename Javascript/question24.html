@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Question24</title>
+    <style>
+        div
+        {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function cal(){
+            var start = parseInt(document.getElementById("start").value);
+            var end = parseInt(document.getElementById("end").value);
+            var multiply = parseInt(document.getElementById("mul").value);
+
+            document.getElementById("textarea").value=(function(){
+                var arr = [];
+                if(start<end){
+                for(var i=0;i<=(end-start);i++){
+                    arr[i]=((start+i)+" times "+multiply+" = "+(multiply*(start+i)))                 
+                }
+                    return document.getElementById("textarea").value=arr.join("\n");
+                }
+                else{
+                    return document.getElementById("textarea").value="Invalid Inputs"
+                }
+            })();
+        }
+    </script>
+</head>
+<body>
+    <fieldset style="width: fit-content; border-style: solid;">
+        <form>
+        <div>
+        Start Number: <input type="text" name="start" id="start" size="4" required> &nbsp;
+        End Number: <input type="text" name="end" id="end" size="4" required> &nbsp;
+        Multiply By: <input type="text" name="mul" id="mul" size="4" required>
+        <br><br><br>
+        <input type="button" value="Times Table" onclick="cal()">
+        <br><br><b>
+        <input type="reset" value="Reset">
+        <br><br><br>
+        <textarea name="textarea" id="textarea" cols="60" rows="10" readonly></textarea>
+        </form>
+        </div>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rect_Circ</title>
+    </head>
+    <body>
+        <h2>Rectangle and Circle</h2>
+        <script>
+			var len = parseInt(prompt("Enter the length"));
+			var bre = parseInt(prompt("Enter the breadth"));
+			
+			var rectObj = { 
+							len,
+							bre,
+							area:len*bre,
+							perimeter:(2*(len+bre)),
+							dispArea:function()
+							{
+								document.write("Area of rectangle is: " + this.area + "<br>");
+							},
+							dispPeri:function()
+							{
+								document.write("Perimeter of rectangle is: " + this.perimeter + "<br>");
+							}
+						}
+			var rad = parseInt(prompt("Enter the radius"));
+		
+			var circObj = { 
+							rad,
+							area:(Math.PI*rad*rad),
+							circum:(2*Math.PI*rad),
+							dispArea:function()
+							{
+								document.write("Area of circle is: " + this.area + "<br>");
+							},
+							dispCircum:function()
+							{
+								document.write("Circumference of Circle is: " + this.circum + "<br>");
+							}
+						}
+			rectObj.dispArea();
+			rectObj.dispPeri();
+			
+			circObj.dispArea();
+			circObj.dispCircum();
+        </script>		
+    </body>
+</html>

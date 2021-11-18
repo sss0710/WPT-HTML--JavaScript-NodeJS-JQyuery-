@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>Compound Interest</title>
+<script>
+	function comp_int(p,r,y)
+	{
+		var n1 = (1 + (r/100));
+		var n2 = 1;
+		for(var i = 1; i <= y; i++)
+			n2 = n2 * n1;
+		var n3 = n2 * p;
+		var int = n3 - p;
+		return int;
+	}
+</script>
+</head>
+<body>
+<script>
+	var n = prompt("Enter principle");
+	var p = parseInt(n);
+	var n = prompt("Enter rate of interest");
+	var rate = parseInt(n);
+	var n = prompt("Enter year");
+	var year = parseInt(n);
+
+	document.write("-------------------------------------------------------------------------------------------------------------");
+	document.write("<br>");
+	document.write("--------------------------------------------------Compund Interest-------------------------------------------");
+	document.write("<br>");
+	document.write("-------------------------------------------------------------------------------------------------------------");
+	document.write("<br>");
+	document.write("Principal: " + p);
+	document.write("<br>");
+	document.write("Rate of Interest: " + rate);
+	document.write("<br>");
+	document.write("Period: " + year);
+	document.write("<br>");
+	document.write("Interest compounded: " + comp_int(p, rate, year));
+	</script>
+</body>
+</html>

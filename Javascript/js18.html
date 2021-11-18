@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Reverse_Sort</title>
+		<script>
+			function arr()
+			{
+				var ar = ["Amazon", "Microsoft", "Facebook", "Monster", "Sandisk"];
+				
+				for(var i = 0; i < ar.length; i++)
+				{
+					var splitString = ar[i].split("");
+					var reverseArray = splitString.reverse();
+					ar[i] = reverseArray.join("")
+				}
+				
+				ar.sort();
+				for(var i = 0; i < ar.length; i++)
+					document.write(ar[i]+"<br>");
+			}
+		</script>
+	</head>
+	
+	<body>
+		<script>
+			arr();
+		</script>
+	</body>
+</html>
+
+				
+				

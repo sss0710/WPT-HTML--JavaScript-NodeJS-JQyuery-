@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSN by Regex</title>
+    <script>
+		function regex_validate()
+		{
+			var str = document.getElementById("ssn").value;
+			if(str.length == 11)
+			{
+			var s1 = str.substring(0,3);
+			var s2 = str.substring(4,6);
+			var s3 = str.substring(7,str.length);
+			const checkRegex1 = /\d\d\d/;
+			const checkRegex2 = /\d\d/;
+			const checkRegex3 = /\d\d\d\d/;
+			
+			if(checkRegex1.test(s1) && checkRegex2.test(s2) && checkRegex3.test(s3))
+				document.getElementById("valid").innerHTML = (str + " is a valid Social Security Number");
+			}
+			else
+				document.getElementById("valid").innerHTML = (str + " is not a valid Social Security Number");
+		}
+		function rest()
+		{
+			document.getElementById("ssn").value = "";
+		}
+	</script>
+</head>
+<body>
+	<fieldset style="width:40%">
+		<form><h3>Enter the SSN:</h3>
+		<input name="ssn" id="ssn"  size="12" poster="000-00-0000" required>
+		<br>
+		<span id="valid"></span>
+		<br><br>
+		<input type="button" value="Check" onclick="regex_validate()">
+		&nbsp;&nbsp;&nbsp;
+		<input type="button" value="Reset" onclick="rest()">
+	</form></fieldset>
+</body>
+</html>
