@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+
+ function sendRequest(){
+     //step 1: create XHR object
+	 var xhr=new XMLHttpRequest();
+	 //step 2: Generate Request
+	 var url="https://jsonplaceholder.typicode.com/users";
+	 xhr.open("GET",url,true);
+	 //step 2: Define onreadystatechange function
+	 xhr.onreadystatechange=function(){
+	       if(xhr.readyState==4){
+		       var data=xhr.responseText;
+			   var jsdata=JSON.parse(data);
+			  // alert(jsdata.length);
+			   var str="<select>";
+			   for(var i=0;i<jsdata.length;i++){
+			            "aasdas'"
+			        str+="<option value='"+jsdata[i].id+"'>"+jsdata[i].id+"---"+jsdata[i].name+"---"+jsdata[i].address.city+"</option>";
+					//<optioin value='1'>
+			   }  //end of for
+			                        //<option value="id">id---name---city</option>
+			   str+="</select>";
+			   //alert(str);
+			   document.getElementById("mydiv").innerHTML=str;
+		   }  // end of if 
+	 }  //// end of onreadystatechange function
+	 
+	 //step 4: Define onreadystatechange function
+	 xhr.send();
+	 
+ }
+</script>
+   
+</head>
+<body>
+<p>This is AJAX Demo Retriving data from url https://jsonplaceholder.typicode.com/users</p>
+<p>We all we write the code together,This is AJAX Demo Retriving data from url https://jsonplaceholder.typicode.com/users</p>
+<div id="mydiv"></div>
+<button type="button" name="btn" onclick="sendRequest()">GetData</button>
+
+</body>
+</html>

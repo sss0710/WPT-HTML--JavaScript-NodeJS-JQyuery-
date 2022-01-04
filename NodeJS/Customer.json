@@ -1,0 +1,30 @@
+[{
+    "name":"Modi",
+    "address":"India",
+    "ph_no":"9876543210",
+    "creditRating":"6"
+},
+{
+    "name":"Biden",
+    "address":"USA",
+    "ph_no":"+111656874",
+    "creditRating":"7"
+},
+{
+    "name":"Macron",
+    "address":"France",
+    "ph_no":"+478632195",
+    "creditRating":"5"
+},
+{
+    "name":"Justin",
+    "address":"Canada",
+    "ph_no":"+973201564",
+    "creditRating":"4"
+},
+{
+    "name":"Putin",
+    "address":"Russia",
+    "ph_no":"+698753210",
+    "creditRating":"9"
+}]

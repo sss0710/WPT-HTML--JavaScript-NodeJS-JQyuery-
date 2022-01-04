@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <script src="../Jquery/Script/jquery-3.6.0.js"></script>
+  </head>
+  <body>
+      <form action = "process">
+    <input type="text" name="num" id="numInput" />
+    <input type ="button" name="btn" value="Print" />
+    <p id="p1"></p></form>
+    <script>
+        function printTable(){
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET",`http://localhost:8000/process?num=${$("#numInput").val()}`);
+        xhr.onload = function(){
+          $("#p1").html(xhr.responseText);
+        };
+        xhr.send();
+      };
+    </script>
+  </body>
+</html>

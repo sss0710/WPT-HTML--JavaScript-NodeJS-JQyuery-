@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Table Using Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        function sendRequest(){
+            var xhr = new XMLHttpRequest();
+            var url = 'http://localhost:3000/process?num=' + $("input#numInput").val();
+            xhr.open("GET",url,true);
+            xhr.onreadystatechange=function(){
+	            if(xhr.readyState==4)
+		            $("#p1").html(xhr.responseText);
+            }
+            xhr.send();
+        }
+    </script>
+    </head>
+    <body>
+        <input type="text" name="num" id="numInput" onchange="sendRequest()">
+
+        <ol id = "p1"></ol>
+    </body>
+</html>
