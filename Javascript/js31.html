@@ -1,89 +1,156 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<title>Personal Details</title>
-		<style>
-			
-		</style>
-		
-		<script>
-        var mon = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        for (var i = 0; i < mon.length; i++) {
-            document.getElementById("mon").innerHTML += "<option value = '" + mon[i].substr(0, 3) + "'>" + mon[i] + "</option>";
+
+<head>
+    <style>
+        form {
+            display: table;
         }
-        for (var i = 1; i <= 31; i++) {
-            document.getElementById("date").innerHTML += "<option value = '" + i + "'> " + i + "</option>";
+
+        p {
+            display: table-row;
         }
-        for (var i = 1950; i <= (new Date().getFullYear()); i++) {
-            document.getElementById("year").innerHTML += "<option value = '" + i + "'> " + i + "</option>"
+
+        label {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        input {
+            display: table-cell;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+        function checkName() {
+            var name = document.getElementById("name").value;
+            if (name.length > 10) {
+                document.getElementById("s1").innerHTML = "Maximum length is 10";
+                return false;
+            }
+            else if (name.match(/[^a-zA-Z]/)) {
+                document.getElementById("s1").innerHTML = "Only Alphabets allowed";
+                return false;
+            }
+            else {
+                document.getElementById("s1").innerHTML = "";
+                return true;
+            }
+        }
+        function checkLuckynum() {
+            var num = parseInt(document.getElementById("lucky").value);
+            if (num<1000 || num>9999 || isNaN(num)) {
+                document.getElementById("s2").innerHTML = "Number of 4 digits required";
+                return false;
+            }
+            else {
+                document.getElementById("s2").innerHTML = "";
+                return true;
+            }
+        }
+        function checkFood() {
+            var list = document.getElementsByName("food")
+            for (i in list) {
+                if (list[i].checked) {
+                    document.getElementById("s3").innerHTML = "";
+                    return true;
+                }
+            }
+            document.getElementById("s3").innerHTML = "Please select an option";
+            return false;
+        }
+        function validateForm() {
+            if (checkName() && checkLuckynum() && checkFood()) {
+                var name = document.getElementById("name").value;
+                var mon = document.getElementById("mon").value;
+                var date = document.getElementById("date").value;
+                var year = document.getElementById("year").value;
+                var email = document.getElementById("email").value;
+                for (i of document.getElementsByName("gender")) {
+                    if (i.checked) var gender = i.value;
+                }
+                var luckynum = document.getElementById("lucky").value;
+                var foods = [];
+                for (i of document.getElementsByName("food")) {
+                    if (i.checked) foods.push(i.value);
+                }
+                var obj = {
+                    "Name": name,
+                    "Birth Date": (mon + "/" + date + "/" + year),
+                    "Email Address": email,
+                    "Gender": gender,
+                    "Lucky Number": luckynum,
+                    "Favourite Food": foods
+                }
+                var new_win = window.open();
+                new_win.document.write("You Entered: <br>")
+                for(property in obj){
+                    new_win.document.write(property+": "+obj[property]+"<br>");
+                }
+                return true;
+            }
+            else return false;
         }
     </script>
-		
-		<script>
-			function print()
-			{
-				var pname= document.getElementById("name").value;
-				const hasRegex = /[A-Z][a-z]/;
-				if(!hasRegex.test(pname))
-					document.getElementById("Name should contain only letters");
-		
-			}
-		</script>
 </head>
-<body>
-    <fieldset style="width: 60%; border-style:solid">
-        <form>
-        <div>
-        Name: &nbsp;&nbsp;<input name="name" id="name"  required>&nbsp;&nbsp;&nbsp;&nbsp;<span id="letters"></span>
-		
-		<br><br>
-		
-		<label for="calendar">Birthdate:</label>&nbsp;&nbsp;&nbsp;&nbsp;
-			<select name="mon" id="mon" value="month">Month</select>
-			<select name="date" id="date">Day</select>
-			<select name="year" id="year">Year</select>
-			
-			<br><br>
-		Email Address: &nbsp;&nbsp;<input name="mail_ad" id="mail_ad"  required> 
-		
-		<br><br>
-		
-		Gender : <input type="radio" id="male" name="male" value="male">
-					<label for="male">Male</label>
-				<input type="radio" id="female" name="female" value="female">
-					<label for="female">Female</label><br><br>
-			
-        Lucky Number: &nbsp;&nbsp;<input name="lucky" id="lucky"  required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A number between 0 to 100)
-		
-		<br><br> 
-		<table>
-		<tr>
-			<td rowspan="3">Favourite Food:</td><td>
-			<input type="checkbox" id="pizza" name="pizza" value="pizza">
-			<label for="pizza">Pizza</label>
-			</td>
-		</tr>
-			
-		<tr>
-			<td><input type="checkbox" id="pasta" name="pasta" value="pasta">
-			<label for="pasta">Pasta</label>
-			</td>
-		</tr>
-			
-		<tr>
-			<td><input type="checkbox" id="chinese" name="chinese" value="chinese">
-			<label for="chinese">Chinese</label>
-			</td>
-		</tr>
-		</table>
-			
-		<br>
 
-        <input type="button" value="Send Data" onclick="print()">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="reset" value="Reset">
-        </form>
-        </div>
-    </fieldset>
+<body>
+    <form onsubmit="return validateForm()">
+        <p>
+            <label for="name">Name:</label>
+            <input id="name" type="text" required>
+            <span id="s1"></span>
+        </p>
+		<br>
+        <p>
+            <label for="mon">Birth Date:</label>
+            <select id="mon"></select>
+            <select id="date"></select>
+            <select id="year"></select>
+        </p>
+		<br>
+        <p>
+            <label for="email">Email Address</label>
+            <input id="email" type="email" required>
+        </p>
+		<br>
+        <p>
+            <label>Gender:</label>
+            <input type="radio" name="gender" id="male" value="Male" required>Male<br>
+            <input type="radio" name="gender" id="female" value="Female">Female
+        </p>
+		<br>
+        <p>
+            <label>Lucky Number:</label>
+            <input type="text" id="lucky" required>
+            <span id="s2"></span>
+        </p>
+		<br>
+        <p>
+            <label>Favourite Foods:</label>
+            <input type="checkbox" name="food" value="pizza">Pizza<br>
+            <input type="checkbox" name="food" value="pasta">Pasta<span id="s3"></span><br>
+            <input type="checkbox" name="food" value="chinese">Chinese
+        </p><br>
+        <p>
+            <input type="submit" value="Send Data">
+        </p>
+    </form>
+    <script>
+        var mon = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        
+		for (var i = 0; i < mon.length; i++) 
+            document.getElementById("mon").innerHTML += "<option value = '" + mon[i].substr(0, 3) + "'>" + mon[i] + "</option>";
+        
+        for (var i = 1; i <= 31; i++) 
+            document.getElementById("date").innerHTML += "<option value = '" + i + "'> " + i + "</option>";
+        
+        for (var i = 1950; i <= (new Date().getFullYear()); i++) 
+            document.getElementById("year").innerHTML += "<option value = " + i + "> " + i + "</option>"
+        
+    </script>
 </body>
+
 </html>
