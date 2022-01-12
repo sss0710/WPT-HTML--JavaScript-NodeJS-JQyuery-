@@ -15,15 +15,15 @@
 	
 	if(opr == '+')
 		var result = num1 + num2;
-	else
-		if(opr == '-')
-			var result = num1 - num2;
-		else
-			if(opr == '*')
-				var result = num1 * num2;
-			else
-				if(opr == '/')
-					var result = num1 / num2;
+
+	if(opr == '-')
+		var result = num1 - num2;
+	
+	if(opr == '*')
+		var result = num1 * num2;
+	
+	if(opr == '/')
+		var result = num1 / num2;
 					
 	document.write("The result is: " + result);
 	</script>
